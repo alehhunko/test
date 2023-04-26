@@ -32,7 +32,7 @@
                         <li class="nav-item"><a class="nav-link" style="color: white" href="#!">Пункт меню 3</a></li>
                     </ul>
                 </div>
-                <button type="button" class="btn btn-danger rounded-5" type="submit">Обратный
+                <button type="button" class="btn btn-danger rounded-5" id="btn">Обратный
                     звонок</button>
             </div>
         </nav>
@@ -91,14 +91,16 @@
                     <p class="card-text mt-2" style="font-size: small">2.7 дизель, Common rail, 150 л.с., МКПП, Задний
                         привод</p>
                     <div class="d-flex flex-column">
-                        <button type="button" class="btn btn-danger rounded-5 mb-2" type="submit">Получить спец.
+                        <button type="button" class="btn btn-danger rounded-5 mb-2" data-toggle="modal"
+                            data-target="#exampleModal">Получить спец.
                             цену</button>
-                        <button type="button" class="btn btn-outline-dark rounded-5 mb-2" type="submit">Спец.
+                        <button type="button" class="btn btn-outline-dark rounded-5 mb-2" data-toggle="modal"
+                            data-target="#exampleModal">Спец.
                             условия по лизингу</button>
-                        <button type="button" class="btn btn-outline-dark rounded-5" type="submit">Подобрать
+                        <button type="button" class="btn btn-outline-dark rounded-5" data-toggle="modal"
+                            data-target="#exampleModal">Подобрать
                             автомобиль</button>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -150,7 +152,6 @@
         <img style="filter: grayscale(100%); background-size: cover; height: 800px;"
             src="{{ Vite::asset('/resources/img/map.png') }}" class="img-fluid">
     </section>
-
     <!-- Footer-->
     <footer class="py-5 bg-light">
         <div class="container px-5">
@@ -158,11 +159,38 @@
                 персональных <br />данных <br />ИНН: 99999999999 ОГРН: 9999999999999 <br />ООО «КОМПАНИЯ»</p>
         </div>
     </footer>
-    <!-- Bootstrap core JS-->
+    <!-- Modal -->
+    <div class="modal fade" id="goToModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
-    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script> --}}
+    <script type="text/javascript">
+        $('window').on('load', function(){
+        $('#goToModal').modal('show');
+    });
+    </script>
 </body>
 
 </html>
